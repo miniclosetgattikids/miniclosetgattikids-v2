@@ -40,7 +40,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-   <div ref="faqRef" class="ondesk:mt-16 mt-8">
+   <div ref="faqRef" class="ondesk:mt-16 z-10 mt-8">
       <div class="ondesk:mb-12 col-span-12 mb-6 flex justify-center px-3">
          <UBadge
             class="onmobi:w-full"
@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
                   body: 'text-base',
                }">
                <template #trailing="{ open }">
-                  <div class="bg-primary flex rounded-full p-0.75">
+                  <div class="bg-secondary flex rounded-full p-0.75">
                      <UIcon
                         class="size-5 text-white"
                         :name="open ? 'lucide-minus' : 'lucide-plus'" />
