@@ -56,8 +56,7 @@ const { headline, title } = hero
                         'text-secondary z-10 size-6 absolute right-3 onmobi:hidden',
                      label: 'font-semibold',
                   }"
-                  to="https://miniclosetgattikids.com"
-                  target="_blank" />
+                  to="https://miniclosetgattikids.com/vestido/?brand=Petit%20Cherie" />
             </div>
          </div>
       </template>
