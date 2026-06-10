@@ -1,0 +1,55 @@
+:root {
+   --color-whatsapp: #199082;
+   --color-purple: #8200db;
+   --color-lime: #497d00;
+   --color-sky: #00a6f4;
+
+   --ui-header-height: --spacing(17);
+
+   --U-color-green-500: #3dad60;
+   --U-color-green-50: color-mix(in srgb, var(--U-color-green-500) 15%, white);
+   --U-color-green-100: color-mix(in srgb, var(--U-color-green-500) 25%, white);
+   --U-color-green-200: color-mix(in srgb, var(--U-color-green-500) 40%, white);
+   --U-color-green-300: color-mix(in srgb, var(--U-color-green-500) 60%, white);
+   --U-color-green-400: color-mix(in srgb, var(--U-color-green-500) 80%, white);
+   --U-color-green-600: color-mix(in srgb, var(--U-color-green-500) 85%, black);
+   --U-color-green-700: color-mix(in srgb, var(--U-color-green-500) 70%, black);
+   --U-color-green-800: color-mix(in srgb, var(--U-color-green-500) 55%, black);
+   --U-color-green-900: color-mix(in srgb, var(--U-color-green-500) 40%, black);
+   --U-color-green-950: color-mix(in srgb, var(--U-color-green-500) 30%, black);
+
+   --U-color-orange-500: #f6aa39;
+   --U-color-orange-50: color-mix(in srgb, var(--U-color-orange-500) 15%, white);
+   --U-color-orange-100: color-mix(in srgb, var(--U-color-orange-500) 25%, white);
+   --U-color-orange-200: color-mix(in srgb, var(--U-color-orange-500) 40%, white);
+   --U-color-orange-300: color-mix(in srgb, var(--U-color-orange-500) 60%, white);
+   --U-color-orange-400: color-mix(in srgb, var(--U-color-orange-500) 80%, white);
+   --U-color-orange-600: color-mix(in srgb, var(--U-color-orange-500) 85%, black);
+   --U-color-orange-700: color-mix(in srgb, var(--U-color-orange-500) 70%, black);
+   --U-color-orange-800: color-mix(in srgb, var(--U-color-orange-500) 55%, black);
+   --U-color-orange-900: color-mix(in srgb, var(--U-color-orange-500) 40%, black);
+   --U-color-orange-950: color-mix(in srgb, var(--U-color-orange-500) 30%, black);
+}
+
+@theme {
+   --font-sans: 'Inter', sans-serif;
+   --font-brand: 'Work Sans', sans-serif;
+
+   --color-success: #3dad60;
+   --color-error: oklch(64.5% 0.246 16.439);
+   --color-info: oklch(0.588 0.158 241.966);
+
+   --background-color-accented: #e4e4e7;
+   --background-color-elevated: #f7f9fc;
+   --background-color-default: #f6f7f9;
+   --background-color-surface: #eceff7;
+   --background-color-inverted: oklch(0.206 0.01 264.09);
+}
+
+.dark {
+   --background-color-accented: #202020;
+   --background-color-elevated: #121315;
+   --background-color-default: #171819;
+   --background-color-surface: #000000;
+   --background-color-inverted: oklch(0.206 0.01 264.09);
+}
