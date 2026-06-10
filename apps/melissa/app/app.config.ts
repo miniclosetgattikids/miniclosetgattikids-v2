@@ -49,7 +49,7 @@ export default defineAppConfig({
       icons: { loading: 'lucide-loader' },
       colors: {
          primary: 'orange',
-         secondary: 'pink',
+         secondary: 'purple',
       },
       badge: {
          slots: { base: 'min-w-5 justify-center' },
