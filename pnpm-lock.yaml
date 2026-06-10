@@ -70,6 +70,12 @@ importers:
         specifier: ^1.2.86
         version: 1.2.86
 
+  apps/melissa:
+    devDependencies:
+      '@iconify-json/lucide':
+        specifier: ^1.2.111
+        version: 1.2.111
+
   apps/petitcherie:
     devDependencies:
       '@iconify-json/lucide':
@@ -5140,8 +5146,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.14
 
-  postcss-selector-parser@7.1.1:
-    resolution: {integrity: sha512-orRsuYpJVw8LdAwqqLykBj9ecS5/cRHlI5+nvTo8LcCKmzDmqVORXtOIYEEQuL9D4BxtA1lm5isAqzQZCoQ6Eg==}
+  postcss-selector-parser@7.1.2:
+    resolution: {integrity: sha512-Wjvt4scRFouioIInHf51IFNP4ltJ2EngJM+cZPGiqbKetBfmP3vpdPV8ID2S6JS6/jdo74N8+aEYH9lQr2C6sA==}
     engines: {node: '>=4'}
 
   postcss-svgo@8.0.0:
@@ -10171,7 +10177,7 @@ snapshots:
       eslint: 9.39.4(jiti@2.7.0)
       natural-compare: 1.4.0
       nth-check: 2.1.1
-      postcss-selector-parser: 7.1.1
+      postcss-selector-parser: 7.1.2
       semver: 7.8.3
       vue-eslint-parser: 10.4.1(eslint@9.39.4(jiti@2.7.0))
       xml-name-validator: 4.0.0
@@ -11515,7 +11521,7 @@ snapshots:
   postcss-calc@10.1.1(postcss@8.5.15):
     dependencies:
       postcss: 8.5.15
-      postcss-selector-parser: 7.1.1
+      postcss-selector-parser: 7.1.2
       postcss-value-parser: 4.2.0
 
   postcss-colormin@8.0.0(postcss@8.5.15):
@@ -11535,7 +11541,7 @@ snapshots:
   postcss-discard-comments@8.0.0(postcss@8.5.15):
     dependencies:
       postcss: 8.5.15
-      postcss-selector-parser: 7.1.1
+      postcss-selector-parser: 7.1.2
 
   postcss-discard-duplicates@8.0.0(postcss@8.5.15):
     dependencies:
@@ -11561,7 +11567,7 @@ snapshots:
       caniuse-api: 3.0.0
       cssnano-utils: 6.0.0(postcss@8.5.15)
       postcss: 8.5.15
-      postcss-selector-parser: 7.1.1
+      postcss-selector-parser: 7.1.2
 
   postcss-minify-font-values@8.0.0(postcss@8.5.15):
     dependencies:
@@ -11588,7 +11594,7 @@ snapshots:
       caniuse-api: 3.0.0
       cssesc: 3.0.0
       postcss: 8.5.15
-      postcss-selector-parser: 7.1.1
+      postcss-selector-parser: 7.1.2
 
   postcss-normalize-charset@8.0.0(postcss@8.5.15):
     dependencies:
@@ -11652,7 +11658,7 @@ snapshots:
       postcss: 8.5.15
       postcss-value-parser: 4.2.0
 
-  postcss-selector-parser@7.1.1:
+  postcss-selector-parser@7.1.2:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -11666,7 +11672,7 @@ snapshots:
   postcss-unique-selectors@8.0.0(postcss@8.5.15):
     dependencies:
       postcss: 8.5.15
-      postcss-selector-parser: 7.1.1
+      postcss-selector-parser: 7.1.2
 
   postcss-value-parser@4.2.0: {}
 
@@ -12175,7 +12181,7 @@ snapshots:
     dependencies:
       browserslist: 4.28.2
       postcss: 8.5.15
-      postcss-selector-parser: 7.1.1
+      postcss-selector-parser: 7.1.2
 
   superjson@2.2.6:
     dependencies:
