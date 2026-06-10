@@ -35,7 +35,8 @@ const newsletter = {
 export default defineAppConfig({
    appSubtitle: 'Uma moda para se encantar',
    appTitle: 'Mini Closet Gatti Kids',
-   landingDescription: 'A delicadeza da infância traduzida em cada detalhe.',
+   landingDescription:
+      'Descubra a nova coleção de vestidos de festa infantis e garanta o look perfeito. Acesse nossa vitrine exclusiva Petit Cherie e confira todas as peças originais disponíveis.',
    landingTitle: 'Uma Moda para se encantar.',
    hero,
    faqItems,

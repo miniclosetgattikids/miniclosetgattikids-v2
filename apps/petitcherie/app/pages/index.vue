@@ -6,9 +6,13 @@ useHead({
 })
 
 useSeoMeta({
-   description: 'Uma moda para se encantar.',
+   description:
+      'Procurando vestidos de festa infantis? Somos revenda autorizada Petit Cherie com peças exclusivas e 100% originais para aniversários e batizados.',
+   ogDescription:
+      'Procurando vestidos de festa infantis? Somos revenda autorizada Petit Cherie com peças exclusivas e 100% originais para aniversários e batizados.',
+   ogTitle: 'Vestidos de Festa Infantis: Luxo e Sofisticação com Petit Cherie',
    ogUrl: canonicalUrl,
-   title: 'Mini Closet Gatti Kids',
+   title: 'Vestidos de Festa Infantis: Luxo e Sofisticação com Petit Cherie',
 })
 </script>
 

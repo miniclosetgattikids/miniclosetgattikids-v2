@@ -62,7 +62,7 @@ const { landingDescription, landingTitle } = appConfig
                      trailingIcon: 'text-white z-10 size-6 absolute right-3',
                      label: 'font-semibold',
                   }"
-                  to="https://miniclosetgattikids.com"
+                  to="https://miniclosetgattikids.com/vestido/?brand=Petit%20Cherie"
                   target="_blank" />
             </div>
          </UPageSection>
