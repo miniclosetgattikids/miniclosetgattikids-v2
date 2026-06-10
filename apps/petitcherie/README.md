@@ -1,3 +1,12 @@
 Vestido infantil para festa Petit Cherie
-[v] sitemap
-[v] link e-commerce, product page
+
+- sitemap
+  [v] public folder
+  [v] search console
+
+- pagespeed.web.dev
+  [v] 10/06/2026 mobile 81 89 100 100
+  [v] 10/06/2026 desktop 97 89 100 100
+
+- links
+  [v] e-commerce, product page
