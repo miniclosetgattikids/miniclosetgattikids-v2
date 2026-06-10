@@ -10,3 +10,12 @@ Vestido infantil para festa Petit Cherie
 
 - links
   [v] e-commerce, product page
+
+- pwa
+  [ ] implementação
+
+- redes sociais
+  [ ] post apontando para landing page
+
+- tráfego
+  [ ] ads
