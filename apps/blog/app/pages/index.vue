@@ -22,15 +22,20 @@ useSeoMeta({
          <div class="grid gap-6 lg:grid-cols-3">
             <UBlogPost
                v-for="post in recentPosts"
-               :key="post.title"
+               :key="post.title || post.badge + post.date"
                :title="post.title"
                :description="post.description"
                :date="post.date"
                :badge="post.badge"
                :to="post.to"
                variant="subtle"
-               class="cursor-pointer bg-white ring-pink-100 transition hover:-translate-y-1 hover:shadow-xs hover:shadow-pink-300 hover:ring-pink-300"
-               @click="navigateTo(post.to)">
+               :class="[
+                  'bg-white ring-pink-100 transition',
+                  post.to
+                     ? 'cursor-pointer hover:-translate-y-1 hover:shadow-xs hover:shadow-pink-300 hover:ring-pink-300'
+                     : 'cursor-default opacity-80',
+               ]"
+               @click="post.to && navigateTo(post.to)">
                <template #header>
                   <div
                      :class="[

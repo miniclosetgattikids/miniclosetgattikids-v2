@@ -285,7 +285,7 @@ export const recentPosts = blogPosts.map(
          description,
          img,
          title,
-         to: `/blog/${slug}`,
+         to: slug ? `/blog/${slug}` : undefined,
       }
    },
 )

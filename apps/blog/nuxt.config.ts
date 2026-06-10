@@ -25,9 +25,7 @@ export default defineNuxtConfig({
 
    vite: {
       optimizeDeps: {
-        include: [
-          '@date-fns/tz',
-        ]
-      }
-  
+         include: ['@date-fns/tz'],
+      },
+   },
 })
