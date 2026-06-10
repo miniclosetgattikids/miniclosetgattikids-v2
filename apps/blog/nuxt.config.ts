@@ -22,4 +22,12 @@ export default defineNuxtConfig({
    ui: {
       colorMode: false,
    },
+
+   vite: {
+      optimizeDeps: {
+        include: [
+          '@date-fns/tz',
+        ]
+      }
+  
 })
