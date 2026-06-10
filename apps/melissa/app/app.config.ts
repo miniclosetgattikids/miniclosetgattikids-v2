@@ -48,8 +48,8 @@ export default defineAppConfig({
       prefix: 'U',
       icons: { loading: 'lucide-loader' },
       colors: {
-         primary: 'yellow',
-         secondary: 'orange',
+         primary: 'orange',
+         secondary: 'lime',
       },
       badge: {
          slots: { base: 'min-w-5 justify-center' },
