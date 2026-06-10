@@ -4,7 +4,6 @@ node_modules
 .nuxt
 nuxt.d.ts
 .output
-smoke.log
 build
 .env
 package-lock.json
@@ -14,8 +13,6 @@ dist
 .history
 .netlify
 .agent-shared
-.zencoder
-.zenflow
 .vscode/settings.json
 .cspell.json
 TODO.md
