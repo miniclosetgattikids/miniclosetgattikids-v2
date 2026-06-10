@@ -1,0 +1,21 @@
+shamefullyHoist: true
+strictPeerDependencies: false
+ignoreWorkspaceRootCheck: true
+
+packages:
+   - apps/**
+   - layers/**
+allowBuilds:
+   '@parcel/watcher': true
+   esbuild: true
+   sharp: true
+   unrs-resolver: true
+   vue-demi: true
+
+onlyBuiltDependencies:
+   - '@parcel/watcher'
+   - better-sqlite3
+   - esbuild
+   - sharp
+   - unrs-resolver
+   - vue-demi

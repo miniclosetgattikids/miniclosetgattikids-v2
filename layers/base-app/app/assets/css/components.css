@@ -1,0 +1,189 @@
+@layer components {
+   body {
+      @apply selection:bg-primary selection:text-inverted bg-surface;
+   }
+
+   .text-info {
+      @apply text-sky-600;
+   }
+
+   a {
+      @apply cursor-pointer text-sky-600;
+   }
+
+   h1 {
+      @apply text-2xl leading-tight font-semibold;
+   }
+
+   h2 {
+      @apply text-xl font-medium;
+   }
+
+   h3 {
+      @apply text-lg font-medium;
+   }
+
+   hr {
+      @apply w-full;
+   }
+
+   span {
+      @apply block;
+   }
+
+   small {
+      @apply text-[90%];
+   }
+
+   strong {
+      @apply font-bold;
+   }
+
+   article h1 {
+      @apply mb-3.5 font-[24px] text-sky-600;
+   }
+
+   button {
+      @apply cursor-pointer;
+   }
+
+   img {
+      @apply inline-block h-auto w-full bg-cover;
+   }
+
+   .iconify {
+      @apply flex-none;
+   }
+
+   .layout {
+      @apply bg-surface relative grid min-h-screen grid-cols-[minmax(auto,280px)_auto] gap-x-3 text-base font-normal duration-300;
+   }
+
+   .layout.is-shared {
+      @apply grid-cols-1;
+   }
+
+   .layout-core {
+      @apply grid min-h-screen grid-cols-1 content-start justify-stretch py-4 pr-3;
+   }
+
+   .layout.is-shared .layout-core {
+      @apply p-0;
+   }
+
+   .main {
+      @apply mx-auto grid w-full grid-rows-[minmax(auto,1fr)_min-content] content-start;
+   }
+
+   .main-core {
+      @apply col-span-12 mx-auto grid min-h-full w-full content-start overflow-y-auto;
+   }
+
+   .main-header {
+      @apply bg-surface col-span-12 mb-3 flex w-full items-center rounded-md border px-4 py-3 text-lg font-semibold;
+   }
+
+   .main-main {
+      @apply relative col-span-12 mx-auto grid w-full grid-cols-12 content-start gap-x-3;
+   }
+
+   .page {
+      @apply grid w-full grid-cols-1 grid-rows-1 p-2;
+   }
+
+   .page-core {
+      @apply onmobi:bg-default flex min-h-full flex-col justify-between; /* justify-between é requerido para manter o footer no bottom da screen, quando as page-rows não resolver isso. */
+   }
+
+   .page-row {
+      @apply ondesk:px-8 mx-auto grid w-full max-w-250 grid-cols-12 gap-x-4;
+   }
+
+   .util-center {
+      @apply grid h-screen place-items-center content-center pb-12;
+   }
+
+   .util-disabled {
+      @apply pointer-events-none opacity-50;
+   }
+
+   .hint-none .hint {
+      @apply hidden;
+   }
+
+   .action-group {
+      @apply col-span-full mx-auto mt-8 flex w-full max-w-3xl content-end justify-end gap-x-3 rounded-md;
+   }
+
+   /* always-enabled stepper, tabs */
+
+   .always-enabled {
+      @apply opacity-100;
+   }
+
+   /* my opacity */
+
+   .my-opacity button[data-state='active'] {
+      @apply opacity-100!;
+   }
+
+   /* header */
+
+   .header {
+      @apply bg-primary sticky top-0 z-20 col-span-12 grid rounded-b-md backdrop-blur-sm select-none;
+   }
+
+   .header-core {
+      @apply lapt:px-6 flex items-center gap-x-3 px-3 py-3;
+   }
+
+   .header-title {
+      @apply px-3 text-xl font-semibold;
+   }
+
+   /* form */
+
+   .form {
+      @apply ondesk:bg-elevated ondesk:p-6 ondesk:rounded-md col-span-12 grid h-full w-full grid-cols-1 px-3;
+   }
+
+   .form-core {
+      @apply mx-auto grid h-full w-full max-w-140 grid-cols-12 content-start items-start gap-x-3 gap-y-6;
+   }
+
+   .form .form-core input {
+      @apply bg-default focus:bg-default placeholder-shown:bg-primary/1;
+   }
+
+   .form .form-core .label,
+   .input .label {
+      @apply bg-default peer-focus:bg-default peer-placeholder-shown:bg-transparent;
+   }
+
+   input,
+   .input {
+      @apply disabled:border-primary-300 disabled:bg-elevated disabled:border disabled:border-dashed disabled:ring-0;
+   }
+
+   .label {
+      @apply text-muted peer-placeholder-shown:text-dimmed pointer-events-none absolute -top-1.25 left-3.5 flex items-center rounded-xs text-xs font-medium transition-all peer-placeholder-shown:top-1.5 peer-placeholder-shown:left-1 peer-placeholder-shown:text-sm peer-placeholder-shown:font-normal peer-focus:-top-1.25 peer-focus:left-3.5 peer-focus:text-xs peer-focus:font-medium;
+   }
+
+   .label > div {
+      @apply inline-flex items-end px-1;
+   }
+
+   /* footer */
+
+   .footer {
+      @apply text-dimmed onmobi:hidden grid w-full justify-center gap-x-1 pt-1.5 backdrop-blur-sm;
+   }
+
+   .footer-core {
+      @apply grid grid-flow-col items-center gap-x-1 pt-1 pb-2;
+   }
+
+   .footer-core span {
+      @apply truncate text-xs;
+   }
+}

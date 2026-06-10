@@ -1,0 +1,12 @@
+{
+   "name": "monorepo-shared",
+   "type": "module",
+   "version": "1.0.0",
+   "main": "./nuxt.config.ts",
+   "scripts": {
+      "postinstall": "nuxt prepare",
+      "lint": "eslint . --fix",
+      "format": "prettier --log-level warn --ignore-path '/home/fabio/codes/miniclosetgattikids/.prettierignore' --write './**/*.{md,ts,js,vue,json,css,mjs}' --config '/home/fabio/codes/miniclosetgattikids/.prettierrc.mjs'",
+      "type-check": "vue-tsc --noEmit --skipLibCheck"
+   }
+}

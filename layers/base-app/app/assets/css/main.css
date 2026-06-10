@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+@import './base.css';
+@import './theme.css';
+@import './components.css';
+@import './utilities.css';
+
+@custom-variant ondesk (&:where([data-device='desktop'] *));
+@custom-variant onmobi (&:where([data-device='mobile'] *));

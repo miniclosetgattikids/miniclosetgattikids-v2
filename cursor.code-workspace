@@ -1,0 +1,69 @@
+{
+   "folders": [
+      {
+         "name": "miniclosetgattikids[cursor]",
+         "path": ".",
+      },
+   ],
+   "settings": {
+      "window.title": "${dirty} ${activeFolderMedium}",
+      "workbench.tree.enableStickyScroll": true,
+      "workbench.tree.stickyScrollMaxItemCount": 1,
+      "editor.stickyScroll.enabled": false,
+      "editor.fontFamily": "MesloLGM Nerd Font",
+      "editor.fontLigatures": false,
+      "editor.fontSize": 13,
+      "editor.formatOnSave": true,
+      "editor.lineHeight": 1.8,
+      "editor.linkedEditing": true,
+      "editor.wordWrap": "on",
+      "editor.gotoLocation.multipleDefinitions": "goto",
+      "editor.minimap.enabled": true,
+      "editor.minimap.maxColumn": 35,
+      "breadcrumbs.enabled": false,
+      // multi command
+      "multiCommand.commands": [
+         {
+            "command": "multiCommand.insertLineLog",
+            "sequence": [
+               {
+                  "command": "editor.action.insertSnippet",
+                  "args": {
+                     "snippet": "console.log('🥁 ~ ${TM_LINE_NUMBER}: $1')",
+                  },
+               },
+            ],
+         },
+         {
+            "command": "multiCommand.gitCommit",
+            "sequence": [
+               "git.stageAll",
+               "cursor.generateGitCommitMessage",
+               "git.commit",
+               "git.sync",
+            ],
+         },
+      ],
+      // tailwind
+      "tailwindCSS.emmetCompletions": true,
+      "files.associations": {
+         "*.css": "tailwindcss",
+         "*.toml": "toml",
+      },
+      "tailwindCSS.experimental.configFile": "./layers/base-app/app/assets/css/main.css",
+      // https://vueschool.io/articles/vuejs-tutorials/setting-up-your-ide-for-nuxt-ui-a-complete-guide/
+      "tailwindCSS.classAttributes": ["class", "ui"],
+      "tailwindCSS.experimental.classRegex": [
+         ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+      ],
+      "css.lint.duplicateProperties": "error",
+      // turbo log
+      "turboConsoleLog.logMessagePrefix": "🥁",
+      "turboConsoleLog.logMessageSuffix": "",
+      "turboConsoleLog.delimiterInsideMessage": "",
+      "turboConsoleLog.insertEnclosingClass": false,
+      "turboConsoleLog.insertEnclosingFunction": false,
+      "turboConsoleLog.isTurboTelemetryEnabled": false,
+      "turboConsoleLog.quote": "'",
+   },
+}

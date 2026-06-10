@@ -1,0 +1,124 @@
+{
+   "folders": [
+      {
+         "name": "miniclosetgattikids[vscode]",
+         "path": ".",
+      },
+   ],
+   "settings": {
+      "window.title": "${dirty} ${activeFolderMedium}",
+      "workbench.iconTheme": "vscode-icons",
+      "workbench.colorCustomizations": {
+         "breadcrumb.background": "#191d14",
+      },
+      "js/ts.updateImportsOnFileMove.enabled": "never",
+      "js/ts.autoClosingTags.enabled": false,
+      "js/ts.suggest.autoImports": false,
+      "workbench.list.smoothScrolling": true,
+      "workbench.productIconTheme": "Default",
+      "workbench.startupEditor": "none",
+      "workbench.tree.enableStickyScroll": true,
+      "workbench.tree.stickyScrollMaxItemCount": 1,
+      // editor
+      "editor.stickyScroll.enabled": false,
+      "editor.acceptSuggestionOnCommitCharacter": false,
+      "editor.inlineSuggest.suppressSuggestions": true,
+      "editor.cursorSmoothCaretAnimation": "on",
+      "editor.fontFamily": "MesloLGM Nerd Font",
+      "editor.fontLigatures": false,
+      "editor.fontSize": 13,
+      "editor.formatOnSave": true,
+      "editor.gotoLocation.multipleDefinitions": "goto",
+      "editor.lineHeight": 1.8,
+      "editor.linkedEditing": true,
+      "editor.wordWrap": "on",
+      "editor.guides.bracketPairs": "active",
+      "editor.stickyScroll.scrollWithEditor": false,
+      "editor.cursorStyle": "line",
+      "editor.minimap.maxColumn": 35,
+      "editor.quickSuggestions": {
+         "other": "on",
+         "comments": "off",
+         "strings": "on",
+      },
+      // terminal
+      "terminal.integrated.lineHeight": 1.4,
+      "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+      "terminal.integrated.fontSize": 13,
+      "terminal.integrated.cursorStyle": "underline",
+      //  git
+      "git.confirmSync": false,
+      "git.openRepositoryInParentFolders": "always",
+      // emmet
+      "emmet.triggerExpansionOnTab": true,
+      "emmet.showSuggestionsAsSnippets": true,
+      // tailwind
+      "tailwindCSS.emmetCompletions": true,
+      "files.associations": {
+         "*.css": "tailwindcss",
+         "*.toml": "toml",
+      },
+      "tailwindCSS.experimental.configFile": "./layers/base-app/app/assets/css/main.css",
+      // https://vueschool.io/articles/vuejs-tutorials/setting-up-your-ide-for-nuxt-ui-a-complete-guide/
+      "tailwindCSS.classAttributes": ["class", "ui"],
+      "tailwindCSS.experimental.classRegex": [
+         ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+      ],
+      "css.lint.duplicateProperties": "error",
+      // css navigation
+      "CSSNavigation.activeCSSFileExtensions": ["css"],
+      "CSSNavigation.activeHTMLFileExtensions": ["html", "vue"],
+      "git.ignoreLimitWarning": true,
+      "editor.lineNumbers": "on",
+      "html.autoClosingTags": false,
+      "files.autoSave": "afterDelay",
+      "files.autoSaveDelay": 10000,
+      "breadcrumbs.enabled": false,
+      // multi command
+      "multiCommand.commands": [
+         {
+            "command": "multiCommand.insertLineLog",
+            "sequence": [
+               {
+                  "command": "editor.action.insertSnippet",
+                  "args": {
+                     "snippet": "console.log('🥁 ~ ${TM_LINE_NUMBER}: $1')",
+                  },
+               },
+            ],
+         },
+         {
+            "command": "multiCommand.gitCommit",
+            "sequence": [
+               "git.stageAll",
+               "commitMsg.autofill",
+               "git.commit",
+               "git.sync",
+            ],
+         },
+      ],
+      "chatgpt.commentCodeLensEnabled": true,
+      "chatgpt.openOnStartup": false,
+      "breadcrumbs.filePath": "off",
+      // nuxt
+      "nuxtr.vueFiles.template.defaultLanguage": "html",
+      "nuxtr.vueFiles.firstTag": "script",
+      "nuxtr.vueFiles.script.type": "setup",
+      "nuxtr.vueFiles.script.defaultLanguage": "ts",
+      "nuxtr.vueFiles.style.addStyleTag": false,
+      "nuxtr.openItemsAfterCreation": true,
+      // vue
+      "vue.editor.reactivityVisualization": false,
+      "togglequotes.chars": ["\"", "'", "`"],
+      "git.autofetch": true,
+      "editor.hover.delay": 1000,
+      // turbo log
+      "turboConsoleLog.logMessagePrefix": "🥁",
+      "turboConsoleLog.logMessageSuffix": "",
+      "turboConsoleLog.delimiterInsideMessage": "",
+      "turboConsoleLog.insertEnclosingClass": false,
+      "turboConsoleLog.insertEnclosingFunction": false,
+      "turboConsoleLog.isTurboTelemetryEnabled": false,
+      "turboConsoleLog.quote": "'",
+   },
+}
