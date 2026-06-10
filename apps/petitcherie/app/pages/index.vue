@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const canonicalUrl = 'https://www.miniclosetgattikids.online/'
+const canonicalUrl = 'https://petitcherie.miniclosetgattikids.online/'
 
 useHead({
    link: [{ href: canonicalUrl, rel: 'canonical' }],
