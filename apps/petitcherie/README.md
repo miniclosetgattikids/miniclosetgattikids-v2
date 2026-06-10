@@ -1,6 +1,9 @@
-# Vestido infantil para festa Petit Cherie
+# Vestidos de festa infantis Petit Cherie
 
+https://pt.majestic.com/reports/site-explorer?oq=https://petitcherie.miniclosetgattikids.online&scope=domain&IndexDataSource=F
 https://petitcherie.miniclosetgattikids.online
+miniclosetgattikidsonline@gmail.com
+contato@miniclosetgattikids.online
 
 ## Description
 
@@ -12,9 +15,9 @@ Mães e pais que procuram vestidos de festa de luxo para as suas filhas em ocasi
 Famílias de classe média-alta que valorizam marcas premium e autenticidade na moda infantil.
 Avós e familiares que pretendem oferecer presentes de moda infantil sofisticados e de qualidade.
 Organizadores de festas e eventos infantis que necessitam de looks elegantes e exclusivos para as crianças.
-Consumidores que já conhecem a marca Petit Cherie e procuram um revendedor autorizado e de confiança em Portugal.
+Consumidores que já conhecem a marca Petit Cherie e procuram um revendedor autorizado e de confiança no Brasil.
 
-## sitemap
+## Sitemap
 
 [v] public folder
 [v] search console
@@ -24,24 +27,26 @@ Consumidores que já conhecem a marca Petit Cherie e procuram um revendedor auto
 [v] 10/06/2026 mobile 81 89 100 100
 [v] 10/06/2026 desktop 97 89 100 100
 
-## rank serpfox
+## Rank serpfox
 
 [v] 10/06/2026 none
 
-## links
+## Links
 
 [v] e-commerce, product page
 
-## volume de busca
+## Volume de busca
 
-## pwa
+[v] 10/06/2026 vestidos de festa infantis 9.9k
+
+## PWA
 
 [ ] implementação
 
-## redes sociais
+## Redes sociais
 
 [ ] post apontando para landing page
 
-## tráfego
+## Tráfego
 
 [ ] ads
