@@ -1,0 +1,16 @@
+{
+   "name": "melissa",
+   "type": "module",
+   "version": "1.0.0",
+   "scripts": {
+      "postinstall": "nuxt prepare",
+      "generate": "nuxt generate",
+      "build": "nuxt build",
+      "dev": "nuxt dev",
+      "lint": "eslint . --fix",
+      "type-check": "vue-tsc --noEmit --skipLibCheck"
+   },
+   "devDependencies": {
+      "@iconify-json/lucide": "^1.2.111"
+   }
+}
