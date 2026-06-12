@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { recentPosts } from '~/data/blog-posts'
+import { recentPosts } from '~/data/load-blog-posts'
 
 useSeoMeta({
    description:

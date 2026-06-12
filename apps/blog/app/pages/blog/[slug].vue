@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { blogPosts } from '~/data/blog-posts'
+import { blogPosts, toPostDate } from '~/data/load-blog-posts'
 
 const route = useRoute()
 const slug = String(route.params.slug ?? '')
@@ -14,6 +14,11 @@ if (!post) {
    })
 }
 
+const postContentHtml = post.content_markdown.replace(
+   /<h1[^>]*>[\s\S]*?<\/h1>\s*/i,
+   '',
+)
+
 const breadcrumbItems = [
    { icon: 'lucide:home', label: 'Início', to: '/' },
    { label: 'Blog', to: '/#recentes' },
@@ -25,19 +30,19 @@ const formattedDate = new Intl.DateTimeFormat('pt-BR', {
    month: 'long',
    timeZone: 'UTC',
    year: 'numeric',
-}).format(new Date(post.date))
+}).format(new Date(post.created * 1000))
 
 const relatedPosts = blogPosts
    .filter((item) => {
       return item.slug !== post.slug
    })
    .slice(0, 2)
-   .map(({ accent, badge, date, description, slug, title }) => {
+   .map(({ created, excerpt, slug, title }) => {
       return {
-         accent,
-         badge,
-         date,
-         description,
+         accent: 'from-pink-200 via-orange-100 to-rose-100',
+         badge: 'Post',
+         date: toPostDate(created),
+         description: excerpt ?? '',
          title,
          to: `/blog/${slug}`,
       }
@@ -59,40 +64,11 @@ const copyPostUrl = async () => {
 }
 
 useSeoMeta({
-   description: post.description,
-   ogDescription: post.description,
-   ogTitle: `${post.title} | MiniCloset Gatti Kids Blog`,
-   title: `${post.title} | MiniCloset Gatti Kids Blog`,
+   description: post.meta_description,
+   ogDescription: post.meta_description,
+   ogTitle: `${post.meta_title} | MiniCloset Gatti Kids Blog`,
+   title: `${post.meta_title} | MiniCloset Gatti Kids Blog`,
 })
-
-type BodyBlock = {
-   text: string
-   type: 'heading' | 'paragraph'
-}
-
-const parseBodyBlocks = (content: string): BodyBlock[] => {
-   return content
-      .split(/\n\n+/)
-      .map((block) => {
-         return block.trim()
-      })
-      .filter((block) => {
-         return block.length > 0
-      })
-      .map((block) => {
-         if (block.startsWith('#### ')) {
-            return {
-               text: block.slice(5),
-               type: 'heading' as const,
-            }
-         }
-
-         return {
-            text: block,
-            type: 'paragraph' as const,
-         }
-      })
-}
 </script>
 
 <template>
@@ -105,15 +81,17 @@ const parseBodyBlocks = (content: string): BodyBlock[] => {
          <UContainer>
             <UPageHeader
                :title="post.title"
-               :description="post.description"
+               :description="post.excerpt ?? ''"
                :ui="{
                   description: 'max-w-3xl text-[#6d5360]',
                   title: 'max-w-4xl text-4xl sm:text-5xl lg:text-6xl text-[#2c1e25] leading-15',
                }">
                <template #headline>
                   <div class="flex flex-wrap items-center gap-3">
-                     <UBadge :label="post.badge" variant="subtle" size="lg" />
-                     <time :datetime="post.date" class="text-sm text-[#7f6471]">
+                     <UBadge label="Post" variant="subtle" size="lg" />
+                     <time
+                        :datetime="toPostDate(post.created)"
+                        class="text-sm text-[#7f6471]">
                         {{ formattedDate }}
                      </time>
                   </div>
@@ -124,25 +102,8 @@ const parseBodyBlocks = (content: string): BodyBlock[] => {
                class="mt-3 grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
                <div class="grid gap-8">
                   <section
-                     v-for="(section, index) in post.sections"
-                     :key="index"
-                     class="grid gap-4 rounded-[1.75rem] bg-white/70 p-6 ring-1 ring-pink-100 sm:p-8">
-                     <template v-for="paragraph in section.body" :key="paragraph">
-                        <template
-                           v-for="(block, index2) in parseBodyBlocks(paragraph)"
-                           :key="`${paragraph}-${index2}`">
-                           <h4
-                              v-if="block.type === 'heading'"
-                              class="text-xl font-semibold text-[#2c1e25]">
-                              {{ block.text }}
-                           </h4>
-                           <p
-                              v-else
-                              class="text-base leading-8 whitespace-pre-line text-[#5f4853] sm:text-lg">
-                              {{ block.text }}
-                           </p>
-                        </template>
-                     </template>
+                     class="blog-post-content grid gap-4 rounded-[1.75rem] bg-white/70 p-6 ring-1 ring-pink-100 sm:p-8">
+                     <div v-html="postContentHtml" />
                   </section>
                </div>
 
@@ -219,3 +180,38 @@ const parseBodyBlocks = (content: string): BodyBlock[] => {
       </UPageSection>
    </div>
 </template>
+
+<style scoped>
+.blog-post-content :deep(h2) {
+   @apply mt-6 text-xl font-semibold text-[#2c1e25];
+}
+
+.blog-post-content :deep(h3) {
+   @apply mt-4 text-lg font-semibold text-[#2c1e25];
+}
+
+.blog-post-content :deep(p) {
+   @apply text-base leading-8 whitespace-pre-line text-[#5f4853] sm:text-lg;
+}
+
+.blog-post-content :deep(ul),
+.blog-post-content :deep(ol) {
+   @apply grid gap-2 pl-5 text-base leading-8 text-[#5f4853] sm:text-lg;
+}
+
+.blog-post-content :deep(ul) {
+   @apply list-disc;
+}
+
+.blog-post-content :deep(ol) {
+   @apply list-decimal;
+}
+
+.blog-post-content :deep(li) {
+   @apply pl-1;
+}
+
+.blog-post-content :deep(strong) {
+   @apply font-semibold text-[#2c1e25];
+}
+</style>
