@@ -180,38 +180,3 @@ useSeoMeta({
       </UPageSection>
    </div>
 </template>
-
-<style scoped>
-.blog-post-content :deep(h2) {
-   @apply mt-6 text-xl font-semibold text-[#2c1e25];
-}
-
-.blog-post-content :deep(h3) {
-   @apply mt-4 text-lg font-semibold text-[#2c1e25];
-}
-
-.blog-post-content :deep(p) {
-   @apply text-base leading-8 whitespace-pre-line text-[#5f4853] sm:text-lg;
-}
-
-.blog-post-content :deep(ul),
-.blog-post-content :deep(ol) {
-   @apply grid gap-2 pl-5 text-base leading-8 text-[#5f4853] sm:text-lg;
-}
-
-.blog-post-content :deep(ul) {
-   @apply list-disc;
-}
-
-.blog-post-content :deep(ol) {
-   @apply list-decimal;
-}
-
-.blog-post-content :deep(li) {
-   @apply pl-1;
-}
-
-.blog-post-content :deep(strong) {
-   @apply font-semibold text-[#2c1e25];
-}
-</style>

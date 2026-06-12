@@ -17,3 +17,36 @@ h5 a {
    /* // ignore suggestCanonicalClasses, keep ui */
    @apply text-(--ui-primary);
 }
+
+.blog-post-content h2 {
+   @apply mt-6 text-xl font-semibold text-[#2c1e25];
+}
+
+.blog-post-content h3 {
+   @apply mt-4 text-lg font-semibold text-[#2c1e25];
+}
+
+.blog-post-content p {
+   @apply text-base leading-8 whitespace-pre-line text-[#5f4853] sm:text-lg;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+   @apply grid gap-2 pl-5 text-base leading-8 text-[#5f4853] sm:text-lg;
+}
+
+.blog-post-content ul {
+   @apply list-disc;
+}
+
+.blog-post-content ol {
+   @apply list-decimal;
+}
+
+.blog-post-content li {
+   @apply pl-1;
+}
+
+.blog-post-content strong {
+   @apply font-semibold text-[#2c1e25];
+}
