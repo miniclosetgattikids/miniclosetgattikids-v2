@@ -14,11 +14,6 @@ if (!post) {
    })
 }
 
-const postContentMd = post.content_markdown.replace(
-   /<h1[^>]*>[\s\S]*?<\/h1>\s*/i,
-   '',
-)
-
 const breadcrumbItems = [
    { icon: 'lucide:home', label: 'Início', to: '/' },
    { label: 'Blog', to: '/#recentes' },
@@ -73,7 +68,7 @@ useSeoMeta({
 
       <UContainer>
          <UBlogPost
-            class="bg-white/70 pr-8"
+            class="bg-white pr-8"
             :title="post.title"
             :description="post.meta_description"
             :image="post.cover_image_url"
@@ -84,15 +79,17 @@ useSeoMeta({
       <article class="mb-12">
          <UContainer>
             <div
-               class="mt-3 grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
-               <div class="grid gap-8">
-                  <Comark v-if="postContentMd">{{ postContentMd }}</Comark>
-               </div>
+               class="mt-3 grid gap-x-4 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
+               <UCard>
+                  <Comark v-if="post.content_markdown">
+                     {{ post.content_markdown }}
+                  </Comark>
+               </UCard>
 
-               <aside class="grid gap-5 lg:sticky lg:top-24">
+               <aside class="grid lg:sticky lg:top-24">
                   <UCard
                      variant="outline"
-                     class="bg-white/70 ring-pink-100"
+                     class="ring-pink-100"
                      :ui="{ body: 'p-5 sm:p-6' }">
                      <div class="grid gap-4">
                         <div>
