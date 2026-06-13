@@ -74,7 +74,7 @@ useSeoMeta({
       <UContainer>
          <UBlogPost
             class="bg-white/70 pr-8"
-            :title="post.created"
+            :title="post.title"
             :description="post.meta_description"
             :image="post.cover_image_url"
             :date="formatUnixToDate(post.created)"
