@@ -25,16 +25,6 @@ const SECONDS_PER_MINUTE = 60
 
 const weekdayIds = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'] as const
 
-const openclawDatetimeFormatter = new Intl.DateTimeFormat('en-US', {
-   day: '2-digit',
-   hour: '2-digit',
-   hour12: false,
-   minute: '2-digit',
-   month: '2-digit',
-   weekday: 'short',
-   year: 'numeric',
-})
-
 function getNowDate(): Date {
    return new TZDate(new Date(), 'America/Sao_Paulo')
 }
@@ -278,10 +268,6 @@ function formatUnixToDayId(unixSeconds: number): string {
    return formatDate(getDateFromUnixSeconds(unixSeconds), 'yyyy_MM_dd')
 }
 
-function formatUnixToOpenclawDatetime(unixSeconds: number): string {
-   return formatOpenclawDate(getDateFromUnixSeconds(unixSeconds))
-}
-
 function formatIsoToShortHour(isoString: string): string {
    return formatDate(parseISO(isoString), 'HH:mm')
 }
@@ -317,31 +303,6 @@ function formatIsoToDayId(isoString: string): string {
    return formatDate(parseISO(isoString), 'yyyy_MM_dd')
 }
 
-function getNowOpenclawDatetime(): string {
-   return formatOpenclawDate(getNowDate())
-}
-
-function formatOpenclawDate(date: Date): string {
-   const parts = openclawDatetimeFormatter.formatToParts(date)
-   const weekday = getDatePart(parts, 'weekday')
-   const year = getDatePart(parts, 'year')
-   const month = getDatePart(parts, 'month')
-   const day = getDatePart(parts, 'day')
-   const hour = getDatePart(parts, 'hour')
-   const minute = getDatePart(parts, 'minute')
-
-   return `${weekday} ${year}-${month}-${day} ${hour}:${minute}`
-}
-
-function getDatePart(
-   parts: Intl.DateTimeFormatPart[],
-   type: Intl.DateTimeFormatPartTypes,
-) {
-   return parts.find((part) => {
-      return part.type === type
-   })?.value
-}
-
 function compareUnixSecondsDesc(aUnixSeconds: number, bUnixSeconds: number): number {
    return bUnixSeconds - aUnixSeconds
 }
@@ -369,7 +330,6 @@ export {
    formatUnixToDateTimeKey,
    formatUnixToDateWithWeekday,
    formatUnixToDayId,
-   formatUnixToOpenclawDatetime,
    formatUnixToShortDate,
    formatUnixToShortHour,
    getCalendarDate,
@@ -385,7 +345,6 @@ export {
    getNowDate,
    getNowMilliseconds,
    getNowMinutes,
-   getNowOpenclawDatetime,
    getNowSeconds,
    getNowSupabase,
    getTodayUnixDayKey,

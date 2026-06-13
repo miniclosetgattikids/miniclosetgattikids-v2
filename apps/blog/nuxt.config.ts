@@ -17,6 +17,8 @@ export default defineNuxtConfig({
       enabled: false,
    },
 
+   extends: ['monorepo-shared'],
+
    modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui'],
 
    ssr: false,

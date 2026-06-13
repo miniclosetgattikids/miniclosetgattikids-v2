@@ -1,6 +1,6 @@
 export type BlogPostJson = {
    content_markdown: string
-   cover_image_url: string | null
+   cover_image_url: string
    created: number
    editor_notes: string | null
    excerpt: string | null

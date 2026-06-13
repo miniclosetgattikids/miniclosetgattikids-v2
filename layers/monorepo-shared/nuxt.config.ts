@@ -2,13 +2,7 @@ export default defineNuxtConfig({
    compatibilityDate: '2025-06-01',
 
    imports: {
-      dirs: [
-         'utils',
-         'models/base',
-         'models/global',
-         'models/schedly',
-         'models/publishr',
-      ],
+      dirs: ['utils', 'models/base', 'models/global'],
       presets: [
          {
             from: 'vee-validate',

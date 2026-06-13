@@ -25,24 +25,18 @@ const breadcrumbItems = [
    { label: post.title },
 ]
 
-const formattedDate = new Intl.DateTimeFormat('pt-BR', {
-   day: '2-digit',
-   month: 'long',
-   timeZone: 'UTC',
-   year: 'numeric',
-}).format(new Date(post.created * 1000))
-
 const relatedPosts = blogPosts
    .filter((item) => {
       return item.slug !== post.slug
    })
    .slice(0, 2)
-   .map(({ created, excerpt, slug, title }) => {
+   .map(({ cover_image_url, created, excerpt, slug, title }) => {
       return {
          accent: 'from-pink-200 via-orange-100 to-rose-100',
          badge: 'Post',
          date: toPostDate(created),
          description: excerpt ?? '',
+         image: cover_image_url,
          title,
          to: `/blog/${slug}`,
       }
@@ -77,32 +71,23 @@ useSeoMeta({
          <UBreadcrumb :items="breadcrumbItems" />
       </UContainer>
 
+      <UContainer>
+         <UBlogPost
+            class="bg-white/70 pr-8"
+            :title="post.created"
+            :description="post.meta_description"
+            :image="post.cover_image_url"
+            :date="formatUnixToDate(post.created)"
+            orientation="horizontal" />
+      </UContainer>
+
       <article class="mb-12">
          <UContainer>
-            <UPageHeader
-               :title="post.title"
-               :description="post.excerpt ?? ''"
-               :ui="{
-                  description: 'max-w-3xl text-[#6d5360]',
-                  title: 'max-w-4xl text-4xl sm:text-5xl lg:text-6xl text-[#2c1e25] leading-15',
-               }">
-               <template #headline>
-                  <div class="flex flex-wrap items-center gap-3">
-                     <UBadge label="Post" variant="subtle" size="lg" />
-                     <time
-                        :datetime="toPostDate(post.created)"
-                        class="text-sm text-[#7f6471]">
-                        {{ formattedDate }}
-                     </time>
-                  </div>
-               </template>
-            </UPageHeader>
-
             <div
                class="mt-3 grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
                <div class="grid gap-8">
                   <section
-                     class="blog-post-content grid gap-4 rounded-[1.75rem] bg-white/70 p-6 ring-1 ring-pink-100 sm:p-8">
+                     class="blog-post-content grid gap-4 rounded-lg bg-white/70 p-6 ring-1 ring-pink-100 sm:p-8">
                      <div v-html="postContentHtml" />
                   </section>
                </div>
@@ -118,7 +103,7 @@ useSeoMeta({
                         description: 'text-[#7f6471]',
                         header: 'p-5 sm:p-6 pb-0',
                         title: 'text-[#2c1e25]',
-                     }"/>
+                     }" />
 
                   <UCard
                      variant="outline"
@@ -160,11 +145,12 @@ useSeoMeta({
             <UBlogPost
                v-for="relatedPost in relatedPosts"
                :key="relatedPost.title"
-               :title="relatedPost.title"
+               :title="relatedPost.image"
                :description="relatedPost.description"
                :date="relatedPost.date"
                :badge="relatedPost.badge"
                :to="relatedPost.to"
+               :image="relatedPost.image"
                orientation="horizontal"
                variant="subtle"
                class="cursor-pointer bg-white/80 transition hover:-translate-y-1 hover:ring-pink-400">
@@ -173,7 +159,7 @@ useSeoMeta({
                      :class="[
                         'grid min-h-full place-items-center rounded-lg bg-linear-to-br text-[#34222c]',
                         relatedPost.accent,
-                     ]"/>
+                     ]" />
                </template>
             </UBlogPost>
          </div>
