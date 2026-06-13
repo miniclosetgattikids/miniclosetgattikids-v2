@@ -80,7 +80,11 @@ useSeoMeta({
          <UContainer>
             <div
                class="mt-3 grid gap-x-4 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
-               <UCard>
+               <UCard :ui="{ body: 'sm:pr-10 sm:pl-12 pl-12 pr-10' }">
+                  <span class="text-highlighted mt-4 text-xl font-semibold">
+                     {{ post.title }}
+                  </span>
+
                   <Comark v-if="post.content_markdown">
                      {{ post.content_markdown }}
                   </Comark>

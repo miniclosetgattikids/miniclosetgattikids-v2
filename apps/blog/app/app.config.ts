@@ -112,7 +112,7 @@ export default defineAppConfig({
       card: {
          slots: {
             root: 'onmobi:ring-0',
-            body: 'border-none max-w-prose w-full mx-auto bg-white',
+            body: 'border-none w-full mx-auto bg-white',
             footer: 'pb-4 justify-end pt-2.5 flex gap-x-3 w-full',
             header: 'border-none pb-0 min-h-none',
          },
