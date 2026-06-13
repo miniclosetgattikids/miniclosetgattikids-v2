@@ -39,10 +39,10 @@ useSeoMeta({
                <template #header>
                   <div
                      :class="[
-                        'place-center grid aspect-[4/3] rounded-t-lg bg-gradient-to-br text-[#34222c]',
+                        'place-center grid aspect-4/3 rounded-t-lg bg-linear-to-br text-[#34222c]',
                         post.accent,
                      ]">
-                     <img :src="post.img" class="w-full" >
+                     <img :src="post.img" class="w-full" />
                   </div>
                </template>
             </UBlogPost>

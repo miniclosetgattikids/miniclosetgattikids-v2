@@ -27,13 +27,9 @@ const postFiles = import.meta.glob<BlogPostJson>('./*.json', {
    import: 'default',
 })
 
-export const blogPosts = Object.values(postFiles)
-   .filter((post) => {
-      return post.status === 'ready' && post.slug.length > 0
-   })
-   .sort((left, right) => {
-      return right.created - left.created
-   })
+export const blogPosts = Object.values(postFiles).sort((a, b) => {
+   return b.created - a.created
+})
 
 export const toPostDate = (created: number) => {
    return new Date(created * 1000).toISOString().slice(0, 10)
