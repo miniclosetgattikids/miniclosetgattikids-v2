@@ -137,8 +137,8 @@ useSeoMeta({
                :date="relatedPost.date"
                :image="relatedPost.image"
                orientation="vertical"
-               :to="{ path: relatedPost.to, force: true }"
-               :ui="{ title: 'leading-[21px]' }" />
+               :ui="{ title: 'leading-[21px]' }"
+               @click="navigateTo(relatedPost.to)" />
          </div>
       </UPageSection>
    </div>
