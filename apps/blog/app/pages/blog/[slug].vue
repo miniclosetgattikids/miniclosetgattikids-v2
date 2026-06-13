@@ -94,18 +94,6 @@ useSeoMeta({
 
                <aside class="grid gap-5 lg:sticky lg:top-24">
                   <UCard
-                     title="Resumo rápido"
-                     description="Pontos principais para salvar antes de comprar ou organizar."
-                     variant="subtle"
-                     class="bg-white/85 ring-pink-100"
-                     :ui="{
-                        body: 'p-5 sm:p-6',
-                        description: 'text-[#7f6471]',
-                        header: 'p-5 sm:p-6 pb-0',
-                        title: 'text-[#2c1e25]',
-                     }" />
-
-                  <UCard
                      variant="outline"
                      class="bg-white/70 ring-pink-100"
                      :ui="{ body: 'p-5 sm:p-6' }">
