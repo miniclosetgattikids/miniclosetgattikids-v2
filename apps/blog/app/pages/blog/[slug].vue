@@ -131,23 +131,14 @@ useSeoMeta({
             <UBlogPost
                v-for="relatedPost in relatedPosts"
                :key="relatedPost.title"
-               :title="relatedPost.image"
+               class="hover:bg-primary-50 hover:ring-primary-400 cursor-pointer bg-white"
+               :title="relatedPost.title"
                :description="relatedPost.description"
                :date="relatedPost.date"
-               :badge="relatedPost.badge"
-               :to="relatedPost.to"
                :image="relatedPost.image"
-               orientation="horizontal"
-               variant="subtle"
-               class="cursor-pointer bg-white/80 transition hover:-translate-y-1 hover:ring-pink-400">
-               <template #header>
-                  <div
-                     :class="[
-                        'grid min-h-full place-items-center rounded-lg bg-linear-to-br text-[#34222c]',
-                        relatedPost.accent,
-                     ]" />
-               </template>
-            </UBlogPost>
+               orientation="vertical"
+               :to="{ path: relatedPost.to, force: true }"
+               :ui="{ title: 'leading-[21px]' }" />
          </div>
       </UPageSection>
    </div>
