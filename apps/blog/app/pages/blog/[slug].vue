@@ -86,10 +86,9 @@ useSeoMeta({
             <div
                class="mt-3 grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
                <div class="grid gap-8">
-                  <section
-                     class="blog-post-content grid gap-4 rounded-lg bg-white/70 p-6 ring-1 ring-pink-100 sm:p-8">
-                     <div v-html="postContentHtml" />
-                  </section>
+                  <Comark v-if="postContentHtml">
+                     {{ postContentHtml }}
+                  </Comark>
                </div>
 
                <aside class="grid gap-5 lg:sticky lg:top-24">
