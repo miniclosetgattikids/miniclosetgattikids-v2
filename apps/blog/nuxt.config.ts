@@ -19,7 +19,7 @@ export default defineNuxtConfig({
 
    extends: ['monorepo-shared'],
 
-   modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui'],
+   modules: ['@comark/nuxt', '@nuxt/eslint', '@nuxt/image', '@nuxt/ui'],
 
    ssr: false,
 

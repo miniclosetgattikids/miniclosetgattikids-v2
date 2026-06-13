@@ -10,6 +10,9 @@
       "lint": "eslint . --fix",
       "type-check": "vue-tsc --noEmit --skipLibCheck"
    },
+   "dependencies": {
+      "@comark/nuxt": "^0.4.0"
+   },
    "devDependencies": {
       "@iconify-json/simple-icons": "^1.2.86"
    }

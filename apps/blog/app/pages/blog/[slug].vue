@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { blogPosts, toPostDate } from '~/data/load-blog-posts'
+import { blogPosts } from '~/data/load-blog-posts'
 
 const route = useRoute()
 const slug = String(route.params.slug ?? '')
@@ -29,7 +29,7 @@ const relatedPosts = blogPosts
       return {
          accent: 'from-pink-200 via-orange-100 to-rose-100',
          badge: 'Post',
-         date: toPostDate(created),
+         date: formatUnixToDate(created),
          description: excerpt ?? '',
          image: cover_image_url,
          title,
